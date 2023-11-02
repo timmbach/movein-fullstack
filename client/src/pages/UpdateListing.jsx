@@ -293,7 +293,7 @@ export default function UpdateListing() {
                 required
                 className="p-1 border border-gray-300 rounded-lg w-28"
                 onChange={handleListingInputChange}
-                value={formData.price.toLocaleString("en-US")}
+                value={formData.price}
               />
               <div className="flex gap-1 items-center">
                 <p>Price</p>
