@@ -30,23 +30,23 @@ export default function Header() {
   return (
     <header className="bg-sky-700/40 shadow-md">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-2">
-        <Link className="flex items-center gap-3" to="/">
-          <img src={Logo} alt="logo" className="w-8" />
-          <h1 className="font-bold text-sm sm:text-lg flex">
+        <Link className="flex items-center gap-2 sm:gap-3" to="/">
+          <img src={Logo} alt="logo" className="w-6 sm:w-8" />
+          <h1 className="font-bold text-xs sm:text-lg flex">
             <span className="text-slate-500">move</span>
             <span className="text-slate-900">-in</span>
           </h1>
         </Link>
         <form
           onSubmit={handleSearchSubmit}
-          className="bg-slate-100 p-2 rounded-lg flex items-center"
+          className="bg-slate-100 p-1 sm:p-2 rounded-md sm:rounded-lg flex items-center"
         >
           <input
             type="text"
             name="headerSearch"
             id="headerSearch"
             placeholder="Search..."
-            className="bg-transparent focus:outline-none w-44 sm:w-80"
+            className="bg-transparent focus:outline-none w-40 sm:w-80"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -63,14 +63,14 @@ export default function Header() {
           {currentUser ? (
             <Link to="/profile">
               <img
-                className="rounded-md h-7 w-7 object-cover"
+                className="rounded-md h-6 w-6 sm:h-7 sm:w-7 object-cover"
                 src={currentUser.profileImg}
                 alt="user img"
               ></img>
             </Link>
           ) : (
             <Link to="/sign-in">
-              <li className="cursor-pointer text-slate-700 hover:font-medium">
+              <li className="cursor-pointer text-xs font-semibold sm:text-lg text-slate-700 hover:font-medium">
                 Sing In
               </li>
             </Link>
